@@ -1,5 +1,5 @@
 <?php
-$inversion = 120000;
+$inversion = 1200;
 $tasaInteres = 0.08;
 
 $intereses = $inversion * $tasaInteres;
