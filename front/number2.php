@@ -26,5 +26,6 @@
         <p>El total de los intereses generados es de: <?= $ganancia; ?> </p>
         <p>El total del capital mas sus intereses generados es de: <?= $total; ?></p>
     <?php endif; ?>
+    <script src="../front/js/script.js"></script>
 </body>
 </html>

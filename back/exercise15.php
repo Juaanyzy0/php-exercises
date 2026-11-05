@@ -1,12 +1,10 @@
 <?php
-$lecturaAnterior = 1250;
-$lecturaActual = 1420;
-$costoKwh = 350;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $lecturaAnterior = $_POST["lecturaAnterior"];
+    $lecturaActual = $_POST["lecturaActual"];
+    $costoKwh = $_POST["costoKwh"];
 
-$consumo = $lecturaActual - $lecturaAnterior;
-$montoTotal = $consumo * $costoKwh;
-
-echo "Consumo del mes: $consumo Kwh <br>";
-echo "Monto total a pagar de luz: $" . $montoTotal;
+    $consumo = $lecturaActual - $lecturaAnterior;
+    $montoTotal = $consumo * $costoKwh;
+}
 ?>
-

@@ -1,14 +1,11 @@
 <?php
-$hombres = 18;
-$mujeres = 22;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $hombres = $_POST["hombres"];
+    $mujeres = $_POST["mujeres"];
 
-$totalEstudiantes = $hombres + $mujeres;
+    $totalEstudiantes = $hombres + $mujeres;
 
-$porcentajeHombres = ($hombres * 100) / $totalEstudiantes;
-$porcentajeMujeres = ($mujeres * 100) / $totalEstudiantes;
-
-echo "Total de estudiantes: $totalEstudiantes <br>";
-echo "Porcentaje de hombres: " . $porcentajeHombres . "% <br>";
-echo "Porcentaje de mujeres: " . $porcentajeMujeres . "%";
+    $porcentajeHombres = ($hombres * 100) / $totalEstudiantes;
+    $porcentajeMujeres = ($mujeres * 100) / $totalEstudiantes;
+}
 ?>
-

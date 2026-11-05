@@ -1,25 +1,25 @@
 <?php
-$a = 6;
-$b = 6;
-$c = 8;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $a = $_POST["a"];
+    $b = $_POST["b"];
+    $c = $_POST["c"];
 
-// verificamos si los lados forman un triangulo
-if (($a + $b > $c) && ($a + $c > $b) && ($b + $c > $a)) {
-    echo "Los lados $a, $b, $c SI forman un triangulo. <br>";
+    // verificamos si los lados forman un triangulo
+    if (($a + $b > $c) && ($a + $c > $b) && ($b + $c > $a)) {
+        $esTriangulo = true;
 
-    if ($a == $b && $b == $c) {
-        echo "Tipo de triangulo: Equilatero <br>";
-    } else if ($a == $b || $a == $c || $b == $c) {
-        echo "Tipo de triangulo: Isosceles <br>";
+        if ($a == $b && $b == $c) {
+            $tipo = "Equilatero";
+        } else if ($a == $b || $a == $c || $b == $c) {
+            $tipo = "Isosceles";
+        } else {
+            $tipo = "Escaleno";
+        }
+
+        $s = ($a + $b + $c) / 2;
+        $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
     } else {
-        echo "Tipo de triangulo: Escaleno <br>";
+        $esTriangulo = false;
     }
-
-    $s = ($a + $b + $c) / 2;
-    $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
-    echo "El area del triangulo es: " . $area;
-} else {
-    echo "Los datos no corresponden a un triangulo.";
 }
 ?>
-

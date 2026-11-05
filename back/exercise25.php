@@ -1,16 +1,13 @@
 <?php
-$sueldo = 35000;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $sueldo = $_POST["sueldo"];
 
-if ($sueldo < 40000) {
-    $aumento = $sueldo * 0.15;
-} else {
-    $aumento = $sueldo * 0.12;
+    if ($sueldo < 40000) {
+        $aumento = $sueldo * 0.15;
+    } else {
+        $aumento = $sueldo * 0.12;
+    }
+
+    $nuevoSueldo = $sueldo + $aumento;
 }
-
-$nuevoSueldo = $sueldo + $aumento;
-
-echo "Sueldo anterior: " . $sueldo . " Bs <br>";
-echo "Aumento aplicado: " . $aumento . " Bs <br>";
-echo "El nuevo sueldo del trabajador es: " . $nuevoSueldo . " Bs";
 ?>
-

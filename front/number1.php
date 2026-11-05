@@ -31,5 +31,6 @@
     <?php if(isset($average)): ?>
         <p>El promedio de las edades es igual a: <?= $average; ?></p>
     <?php endif; ?>
+    <script src="../front/js/script.js"></script>
 </body>
 </html>

@@ -1,17 +1,15 @@
 <?php
-$precioInicial = 20000000;
-$devaluacionAuto = 3500000; // lo que pierde de valor en 3 anos
-$incrementoTerreno = 9000000; // lo que sube el terreno en 3 anos
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $precioInicial = $_POST["precioInicial"];
+    $devaluacionAuto = $_POST["devaluacionAuto"]; // lo que pierde de valor en 3 anos
+    $incrementoTerreno = $_POST["incrementoTerreno"]; // lo que sube el terreno en 3 anos
 
-$mitadIncremento = $incrementoTerreno / 2;
+    $mitadIncremento = $incrementoTerreno / 2;
 
-echo "Devaluacion del automovil en 3 anos: $" . $devaluacionAuto . "<br>";
-echo "Mitad del incremento del terreno: $" . $mitadIncremento . "<br>";
-
-if ($devaluacionAuto <= $mitadIncremento) {
-    echo "Decision: SI debe comprar el automovil.";
-} else {
-    echo "Decision: NO debe comprar el automovil, mejor comprar el terreno.";
+    if ($devaluacionAuto <= $mitadIncremento) {
+        $decision = "Decision: SI debe comprar el automovil.";
+    } else {
+        $decision = "Decision: NO debe comprar el automovil, mejor comprar el terreno.";
+    }
 }
 ?>
-

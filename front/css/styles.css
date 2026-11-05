@@ -1,4 +1,160 @@
-
 * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-color: antiquewhite;
+    color: #3d2c1e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #5c3a21;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e2c7a8;
+    padding-bottom: 12px;
+}
+
+/* Estilos para el formulario de cada ejercicio */
+form {
+    background-color: #fffaf3;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e6d0b5;
+    box-shadow: 0 4px 12px rgba(92, 58, 33, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+label {
+    font-weight: 600;
+    color: #5c3a21;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+input {
+    padding: 10px 12px;
+    border: 1px solid #d4b895;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    color: #3d2c1e;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #b56547;
+    box-shadow: 0 0 0 3px rgba(181, 101, 71, 0.2);
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 18px;
+    background-color: #b56547;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background-color: #9c5135;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Estilos para los resultados en <p> */
+p {
+    background-color: #fffaf3;
+    border-left: 5px solid #b56547;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(92, 58, 33, 0.06);
+    font-weight: 500;
+}
+
+/* Estilos para la lista del index.php */
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+}
+
+li a {
+    display: block;
+    background-color: #fffaf3;
+    color: #4a301d;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #e6d0b5;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(92, 58, 33, 0.05);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+li a:hover {
+    transform: translateY(-2px);
+    border-color: #b56547;
+    box-shadow: 0 6px 14px rgba(92, 58, 33, 0.12);
+    color: #b56547;
+}
+
+/* Clases sencillas de apoyo para script.js */
+.back-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #b56547;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.search-box {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d4b895;
+    background-color: #fffaf3;
+    font-size: 1rem;
+}
+
+.fade-in {
+    animation: aparecer 0.35s ease-out forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

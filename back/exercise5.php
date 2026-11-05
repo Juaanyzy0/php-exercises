@@ -1,21 +1,18 @@
 <?php
-$parcial1 = 4.0;
-$parcial2 = 3.5;
-$parcial3 = 4.2;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $parcial1 = $_POST["parcial1"];
+    $parcial2 = $_POST["parcial2"];
+    $parcial3 = $_POST["parcial3"];
+    $examenFinal = $_POST["examenFinal"];
+    $trabajoFinal = $_POST["trabajoFinal"];
 
-$examenFinal = 3.8;
-$trabajoFinal = 4.5;
+    $promedioParciales = ($parcial1 + $parcial2 + $parcial3) / 3;
 
-$promedioParciales = ($parcial1 + $parcial2 + $parcial3) / 3;
+    // sacamos los porcentajes de cada nota
+    $notaParciales = $promedioParciales * 0.55;
+    $notaExamen = $examenFinal * 0.30;
+    $notaTrabajo = $trabajoFinal * 0.15;
 
-// sacamos los porcentajes de cada nota
-$notaParciales = $promedioParciales * 0.55;
-$notaExamen = $examenFinal * 0.30;
-$notaTrabajo = $trabajoFinal * 0.15;
-
-$calificacionFinal = $notaParciales + $notaExamen + $notaTrabajo;
-
-echo "Promedio parciales: " . $promedioParciales . "<br>";
-echo "La calificacion final en computacion es: " . $calificacionFinal;
+    $calificacionFinal = $notaParciales + $notaExamen + $notaTrabajo;
+}
 ?>
-

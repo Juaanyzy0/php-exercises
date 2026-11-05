@@ -1,12 +1,9 @@
 <?php
-$pvp = 120000;
-$precioPagado = 96000;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $pvp = $_POST["pvp"];
+    $precioPagado = $_POST["precioPagado"];
 
-$descuento = $pvp - $precioPagado;
-$porcentaje = ($descuento * 100) / $pvp;
-
-echo "Precio de venta al publico: $" . $pvp . "<br>";
-echo "Precio final pagado: $" . $precioPagado . "<br>";
-echo "Porcentaje de descuento aplicado: " . $porcentaje . "%";
+    $descuento = $pvp - $precioPagado;
+    $porcentaje = ($descuento * 100) / $pvp;
+}
 ?>
-

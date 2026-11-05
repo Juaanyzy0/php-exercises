@@ -1,13 +1,11 @@
 <?php
-$galones = 12;
 $litrosPorGalon = 3.785;
 $precioLitro = 100;
 
-$litrosTotales = $galones * $litrosPorGalon;
-$totalCobrar = $litrosTotales * $precioLitro;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $galones = $_POST["galones"];
 
-echo "Galones surtidos: $galones <br>";
-echo "Equivalente en litros: $litrosTotales <br>";
-echo "Total a cobrar al cliente: " . $totalCobrar . " Bs";
+    $litrosTotales = $galones * $litrosPorGalon;
+    $totalCobrar = $litrosTotales * $precioLitro;
+}
 ?>
-
